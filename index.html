@@ -31,6 +31,7 @@
             color: var(--text-dark);
             line-height: 1.6;
             background: #ffffff;
+            overflow-x: hidden;
         }
 
         /* HEADER */
@@ -70,6 +71,8 @@
             display: flex;
             gap: 2rem;
             align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         nav a {
@@ -213,6 +216,9 @@
         .servicos {
             padding: 5rem 2rem;
             background: var(--bg-light);
+        }
+
+        .servicos-container {
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -429,12 +435,6 @@
             line-height: 1.6;
         }
 
-        @media (max-width: 768px) {
-            .diferenciais-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
         /* CONTATO */
         .contato {
             padding: 5rem 2rem;
@@ -505,7 +505,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             padding: 0.9rem;
             border: 2px solid var(--border-light);
             border-radius: 8px;
@@ -515,7 +516,8 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: var(--secondary);
         }
@@ -542,24 +544,6 @@
             box-shadow: 0 10px 20px rgba(30, 90, 150, 0.3);
         }
 
-        @media (max-width: 768px) {
-            .contato-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            nav {
-                gap: 1rem;
-            }
-
-            nav a {
-                font-size: 0.85rem;
-            }
-        }
-
         /* FOOTER */
         footer {
             background: var(--text-dark);
@@ -571,6 +555,7 @@
 
         footer p {
             opacity: 0.8;
+            font-size: 0.95rem;
         }
 
         /* ANIMACOES */
@@ -589,22 +574,508 @@
             animation: fadeInUp 0.6s ease-out;
         }
 
-        .servico-card:nth-child(2) {
-            animation-delay: 0.1s;
+        .servico-card:nth-child(2) { animation-delay: 0.1s; }
+        .servico-card:nth-child(3) { animation-delay: 0.2s; }
+        .servico-card:nth-child(4) { animation-delay: 0.3s; }
+        .servico-card:nth-child(5) { animation-delay: 0.4s; }
+
+        /* ===== MEDIA QUERIES - RESPONSIVO ===== */
+
+        /* TABLETS E TELAS MÉDIAS */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 1.5rem;
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo-icon {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-badges {
+                gap: 0.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .badge {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .hero-buttons {
+                gap: 0.8rem;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .servicos {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title p {
+                font-size: 0.95rem;
+            }
+
+            .servicos-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .servico-card {
+                padding: 2rem;
+            }
+
+            .servico-icon {
+                font-size: 2.5rem;
+            }
+
+            .servico-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .servico-card p {
+                font-size: 0.9rem;
+            }
+
+            .servico-features li {
+                font-size: 0.85rem;
+            }
+
+            .convenios {
+                padding: 3rem 1.5rem;
+            }
+
+            .convenios-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .convenios-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .convenio-item {
+                padding: 1.5rem;
+            }
+
+            .convenio-item h4 {
+                font-size: 1rem;
+            }
+
+            .convenios-banner {
+                padding: 1.5rem;
+            }
+
+            .convenios-banner h3 {
+                font-size: 1.2rem;
+            }
+
+            .diferenciais {
+                padding: 3rem 1.5rem;
+            }
+
+            .diferenciais h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .diferenciais-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .diferencial-item {
+                padding: 1.2rem;
+                gap: 1rem;
+            }
+
+            .diferencial-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+            }
+
+            .diferencial-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .diferencial-content p {
+                font-size: 0.9rem;
+            }
+
+            .contato {
+                padding: 3rem 1.5rem;
+            }
+
+            .contato h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .contato-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contato-item {
+                gap: 1rem;
+            }
+
+            .contato-icon {
+                font-size: 1.8rem;
+            }
+
+            .contato-text h3 {
+                font-size: 1rem;
+            }
+
+            .contato-text p {
+                font-size: 0.9rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-group label {
+                font-size: 0.9rem;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 1.5rem;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+            }
         }
 
-        .servico-card:nth-child(3) {
-            animation-delay: 0.2s;
+        /* CELULARES PEQUENOS */
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 1rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .logo-icon {
+                font-size: 1.4rem;
+            }
+
+            nav {
+                gap: 0.5rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 0.7rem;
+            }
+
+            .cta-button {
+                padding: 0.5rem 1rem;
+                font-size: 0.7rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .hero-badges {
+                gap: 0.5rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .badge {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.65rem;
+            }
+
+            .hero-buttons {
+                gap: 0.6rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .servicos {
+                padding: 2rem 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .section-title p {
+                font-size: 0.85rem;
+            }
+
+            .servicos-grid {
+                gap: 1.2rem;
+            }
+
+            .servico-card {
+                padding: 1.5rem;
+                border-radius: 10px;
+            }
+
+            .servico-icon {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .servico-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .servico-card p {
+                font-size: 0.85rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .servico-features li {
+                font-size: 0.8rem;
+                padding: 0.2rem 0;
+            }
+
+            .convenios {
+                padding: 2rem 1rem;
+            }
+
+            .convenios-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .convenios-header p {
+                font-size: 0.85rem;
+            }
+
+            .convenios-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .convenio-item {
+                padding: 1.2rem;
+            }
+
+            .convenio-item h4 {
+                font-size: 0.95rem;
+            }
+
+            .convenio-item p {
+                font-size: 0.8rem;
+            }
+
+            .convenios-banner {
+                padding: 1.2rem;
+            }
+
+            .convenios-banner h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .convenios-banner p {
+                font-size: 0.85rem;
+                margin-bottom: 1rem;
+            }
+
+            .diferenciais {
+                padding: 2rem 1rem;
+            }
+
+            .diferenciais h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .diferencial-item {
+                padding: 1rem;
+                gap: 0.8rem;
+            }
+
+            .diferencial-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+            }
+
+            .diferencial-content h3 {
+                font-size: 1rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .diferencial-content p {
+                font-size: 0.8rem;
+            }
+
+            .contato {
+                padding: 2rem 1rem;
+            }
+
+            .contato h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contato-info {
+                gap: 1rem;
+            }
+
+            .contato-item {
+                gap: 0.8rem;
+            }
+
+            .contato-icon {
+                font-size: 1.5rem;
+            }
+
+            .contato-text h3 {
+                font-size: 0.95rem;
+            }
+
+            .contato-text p {
+                font-size: 0.85rem;
+            }
+
+            .form-group {
+                margin-bottom: 0.8rem;
+            }
+
+            .form-group label {
+                font-size: 0.85rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 0.75rem;
+                font-size: 16px; /* Evita zoom no iOS */
+            }
+
+            .form-button {
+                padding: 0.9rem;
+                font-size: 0.95rem;
+            }
+
+            footer {
+                padding: 1.2rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
         }
 
-        .servico-card:nth-child(4) {
-            animation-delay: 0.3s;
-        }
+        /* EXTRA PEQUENO - Smartphones antigos */
+        @media (max-width: 360px) {
+            .logo {
+                font-size: 1rem;
+            }
 
-        .servico-card:nth-child(5) {
-            animation-delay: 0.4s;
-        }
+            nav a {
+                font-size: 0.65rem;
+            }
 
+            .hero h1 {
+                font-size: 1.3rem;
+            }
+
+            .hero p {
+                font-size: 0.85rem;
+            }
+
+            .badge {
+                font-size: 0.6rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.3rem;
+            }
+
+            .servico-icon {
+                font-size: 1.8rem;
+            }
+
+            .servico-card h3 {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -644,70 +1115,67 @@
 
     <!-- SERVICOS -->
     <section class="servicos" id="servicos">
-        <div class="section-title">
-            <h2>Nossos Serviços</h2>
-            <p>Oferecemos uma completa gama de tratamentos odontológicos com tecnologia de ponta</p>
-        </div>
-
-        <div class="servicos-grid">
-            <!-- Limpeza e Profilaxia -->
-            <div class="servico-card">
-                <div class="servico-icon">🪥</div>
-                <h3>Limpeza e Profilaxia</h3>
-                <p>Limpeza profissional completa para remover tártaro e placa bacteriana, deixando seus dentes brilhando e saudáveis.</p>
-                <ul class="servico-features">
-                    <li>Remoção de tártaro</li>
-                    <li>Polimento profissional</li>
-                    <li>Aplicação de flúor</li>
-                </ul>
+        <div class="servicos-container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Oferecemos uma completa gama de tratamentos odontológicos com tecnologia de ponta</p>
             </div>
 
-            <!-- Tratamento de Cárie -->
-            <div class="servico-card">
-                <div class="servico-icon">🪥</div>
-                <h3>Tratamento de Cárie</h3>
-                <p>Restauração de dentes com cárie usando materiais de última geração, preservando a estrutura dentária natural.</p>
-                <ul class="servico-features">
-                    <li>Diagnóstico com tecnologia digital</li>
-                    <li>Materiais compostos de qualidade</li>
-                    <li>Restaurações estéticas</li>
-                </ul>
-            </div>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <div class="servico-icon">🪥</div>
+                    <h3>Limpeza e Profilaxia</h3>
+                    <p>Limpeza profissional completa para remover tártaro e placa bacteriana, deixando seus dentes brilhando e saudáveis.</p>
+                    <ul class="servico-features">
+                        <li>Remoção de tártaro</li>
+                        <li>Polimento profissional</li>
+                        <li>Aplicação de flúor</li>
+                    </ul>
+                </div>
 
-            <!-- Clareamento Dental -->
-            <div class="servico-card">
-                <div class="servico-icon">✨</div>
-                <h3>Clareamento Dental</h3>
-                <p>Dentes mais brancos e radiantes com nosso protocolo de clareamento profissional seguro e eficaz.</p>
-                <ul class="servico-features">
-                    <li>Clareamento em consultório</li>
-                    <li>Resultados rápidos e duradouros</li>
-                    <li>Seguro e supervisionado</li>
-                </ul>
-            </div>
+                <div class="servico-card">
+                    <div class="servico-icon">🪥</div>
+                    <h3>Tratamento de Cárie</h3>
+                    <p>Restauração de dentes com cárie usando materiais de última geração, preservando a estrutura dentária natural.</p>
+                    <ul class="servico-features">
+                        <li>Diagnóstico com tecnologia digital</li>
+                        <li>Materiais compostos de qualidade</li>
+                        <li>Restaurações estéticas</li>
+                    </ul>
+                </div>
 
-            <!-- Tratamento Endodôntico (Canal) -->
-            <div class="servico-card">
-                <div class="servico-icon">⚙️</div>
-                <h3>Tratamento Endodôntico</h3>
-                <p>Tratamento de canal indolor com equipamento moderno, salvando dentes que poderiam ser perdidos.</p>
-                <ul class="servico-features">
-                    <li>Anestesia eficaz</li>
-                    <li>Tecnologia localizadora</li>
-                    <li>Recuperação rápida</li>
-                </ul>
-            </div>
+                <div class="servico-card">
+                    <div class="servico-icon">✨</div>
+                    <h3>Clareamento Dental</h3>
+                    <p>Dentes mais brancos e radiantes com nosso protocolo de clareamento profissional seguro e eficaz.</p>
+                    <ul class="servico-features">
+                        <li>Clareamento em consultório</li>
+                        <li>Resultados rápidos e duradouros</li>
+                        <li>Seguro e supervisionado</li>
+                    </ul>
+                </div>
 
-            <!-- Implantologia -->
-            <div class="servico-card">
-                <div class="servico-icon">👑</div>
-                <h3>Implantes Dentários</h3>
-                <p>Substituição de dentes perdidos com implantes de última geração que parecem e funcionam como dentes naturais.</p>
-                <ul class="servico-features">
-                    <li>Planejamento digital 3D</li>
-                    <li>Implantes de qualidade premium</li>
-                    <li>Duração prolongada</li>
-                </ul>
+                <div class="servico-card">
+                    <div class="servico-icon">⚙️</div>
+                    <h3>Tratamento Endodôntico</h3>
+                    <p>Tratamento de canal indolor com equipamento moderno, salvando dentes que poderiam ser perdidos.</p>
+                    <ul class="servico-features">
+                        <li>Anestesia eficaz</li>
+                        <li>Tecnologia localizadora</li>
+                        <li>Recuperação rápida</li>
+                    </ul>
+                </div>
+
+                <div class="servico-card">
+                    <div class="servico-icon">👑</div>
+                    <h3>Implantes Dentários</h3>
+                    <p>Substituição de dentes perdidos com implantes de última geração que parecem e funcionam como dentes naturais.</p>
+                    <ul class="servico-features">
+                        <li>Planejamento digital 3D</li>
+                        <li>Implantes de qualidade premium</li>
+                        <li>Duração prolongada</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -873,7 +1341,7 @@
 
                     <div class="form-group">
                         <label for="servico">Serviço de Interesse</label>
-                        <select id="servico" name="servico" required style="padding: 0.9rem; border: 2px solid #e8ecf1; border-radius: 8px; font-size: 1rem; font-family: inherit;">
+                        <select id="servico" name="servico" required>
                             <option value="">Selecione um serviço</option>
                             <option value="limpeza">Limpeza e Profilaxia</option>
                             <option value="carie">Tratamento de Cárie</option>
@@ -911,18 +1379,13 @@
             const servico = document.getElementById('servico').value;
             const mensagem = document.getElementById('mensagem').value;
 
-            // Criar mensagem WhatsApp
             const texto = `Olá! Meu nome é ${nome}. Gostaria de agendar uma consulta para o serviço: ${servico}. Meu email é ${email} e telefone ${telefone}. ${mensagem ? 'Detalhes adicionais: ' + mensagem : ''}`;
             const whatsappUrl = `https://wa.me/5519999998888?text=${encodeURIComponent(texto)}`;
             
-            // Enviar para WhatsApp
             window.open(whatsappUrl, '_blank');
-            
-            // Limpar formulário
             event.target.reset();
         }
 
-        // Smooth scroll enhancement
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
